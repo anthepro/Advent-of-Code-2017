@@ -5,7 +5,7 @@
 def part1(input):
     cnt = 0
     pos = 0
-    while(True):
+    while True:
         try:
             input[pos] += 1
             pos += input[pos] - 1
@@ -16,7 +16,7 @@ def part1(input):
 def part2(input):
     cnt = 0
     pos = 0
-    while(True):
+    while True:
         try:
             tmp = input[pos]
             input[pos] += 1 if input[pos] < 3 else -1
