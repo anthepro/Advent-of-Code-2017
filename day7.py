@@ -1,5 +1,4 @@
 import re
-import timeit
 
 def part1():
     return set([x.split()[0] for x in open('day7.txt')]) - set([x.strip() for y in open('day7.txt') if '->' in y for x in y.split('->')[1].split(',')])
