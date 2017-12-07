@@ -16,7 +16,7 @@ def part2():
     while True:
         for x in names:
             if x in children and not bool(set(children[x]) & set(names)):
-                if x in children and len(set([done[y] for y in children[x]])) != 1:
+                if len(set([done[y] for y in children[x]])) != 1:
                     suspects = [done[y] for y in children[x]]
                     return weights[{done[y]: y for y in children[x]}[min(set(suspects), key=suspects.count)]] - (min(set(suspects), key=suspects.count) - max(set(suspects), key=suspects.count))
                 done[x] = sum(done[y] for y in children[x]) + weights[x]
