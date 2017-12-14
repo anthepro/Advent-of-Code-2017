@@ -18,7 +18,7 @@ def part2(input):
             for x in range(length//2):
                 numbers[(pos+x)%256], numbers[(pos+(length-x-1))%256] = numbers[(pos+(length-x-1))%256], numbers[(pos+x)%256]
             pos += length + skip + a * len(input)
-    return ''.join(hex(reduce(lambda x, y: x ^ y, numbers[a*16:(a+1)*16]))[2:] for a in range(16))
+    return ''.join('%02x' % int(reduce(lambda x, y: x ^ y, numbers[a*16:(a+1)*16])) for a in range(16))
 
 def main():
     input = '129,154,49,198,200,133,97,254,41,6,2,1,255,0,191,108'
