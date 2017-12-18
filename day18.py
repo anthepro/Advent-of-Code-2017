@@ -42,7 +42,7 @@ def part1(input, id, queue):
             registers[x[1]] %= registers[x[2]] if x[2] in registers else int(x[2])
         else:
             try:
-                registers[x[1]] = queue[id-1].get(timeout = 1)
+                registers[x[1]] = queue[id-1].get(timeout=1)
             except:
                 if id:
                     print(cnt)
