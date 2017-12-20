@@ -1,6 +1,6 @@
 def part1(input):
     minacc = min(sum(abs(y) for y in input[x][2]) for x in input)
-    tied = [x for x in input if sum(abs(y) for y in input[x][2]) == minacc]
+    tied = (x for x in input if sum(abs(y) for y in input[x][2]) == minacc)
     return min(tied, key=lambda x: sum(y * z for y, z  in zip(input[x][1], input[x][2])))
 
 def part2(input):
